@@ -38,37 +38,39 @@ const siteContent = {
 };
 
 // navBar build
-let services = document.createElement('a');
-services.setAttribute('href', '#');
-services.textContent = 'Services';
 
-let product = document.createElement('a');
-product.setAttribute('href', '#');
-product.textContent = 'Product';
+let servicesNav = document.querySelectorAll('.container nav a')[0];
+servicesNav.textContent = siteContent['nav']['nav-item-1'];
 
-let vision = document.createElement('a');
-vision.setAttribute('href', '#');
-vision.textContent = 'Vision';
+let productNav = document.querySelectorAll('.container nav a')[1];
+productNav.textContent = siteContent['nav']['nav-item-2'];
 
-let features = document.createElement('a');
-features.setAttribute('href', '#');
-features.textContent = 'Features';
+let visionNav = document.querySelectorAll('.container nav a')[2];
+visionNav.textContent = siteContent['nav']['nav-item-3'];
 
-let about = document.createElement('a');
-about.setAttribute('href', '#');
-about.textContent = 'About';
+let featuresNav = document.querySelectorAll('.container nav a')[3];
+featuresNav.textContent = siteContent['nav']['nav-item-4'];
 
-let contactNav = document.createElement('a');
-contactNav.setAttribute('href', '#');
-contactNav.textContent = 'Contact';
+let aboutNav = document.querySelectorAll('.container nav a')[4];
+aboutNav.textContent = siteContent['nav']['nav-item-5'];
 
-let navBar = document.querySelector("header nav");
-navBar.prepend(services)
-navBar.prepend(product)
-navBar.prepend(vision)
-navBar.prepend(features)
-navBar.prepend(about)
-navBar.prepend(contactNav)
+let contactNav = document.querySelectorAll('.container nav a')[5];
+contactNav.textContent = siteContent['nav']['nav-item-6'];
+
+let rangersNav = document.createElement('a');
+rangersNav.setAttribute('href', '#');
+rangersNav.textContent = 'Rangers';
+
+let powerNav = document.createElement('a');
+powerNav.setAttribute('href', '#');
+powerNav.textContent = 'Power';
+
+let extraNavBar = document.querySelector('header nav');
+extraNavBar.appendChild(rangersNav);
+extraNavBar.prepend(powerNav);
+
+let navBarStyle = document.querySelectorAll('.container header nav a');
+navBarStyle.forEach(function(element) { element.style.color = 'green'});
 
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
