@@ -38,7 +38,6 @@ const siteContent = {
 };
 
 // navBar build
-
 let servicesNav = document.querySelectorAll('.container nav a')[0];
 servicesNav.textContent = siteContent['nav']['nav-item-1'];
 
@@ -72,6 +71,7 @@ extraNavBar.prepend(powerNav);
 let navBarStyle = document.querySelectorAll('.container header nav a');
 navBarStyle.forEach(function(element) { element.style.color = 'green'});
 
+
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 // END navBar
@@ -82,7 +82,12 @@ let ctaH1 = document.querySelector('.cta-text h1');
 ctaH1.innerHTML = 'DOM <br> IS <br> Awesome';
 
 let ctaButton = document.querySelector('.cta-text button');
-ctaButton.textContent = "Get Started";
+ctaButton.textContent = "Do NOT Click";
+ctaButton.addEventListener("click", function(){ 
+  alert('You now have a virus. Deleting hard drive. Follow the rules next time.');
+  document.querySelector('.container').style.visibility = "hidden";
+  document.querySelector('body').style.backgroundColor = "red";
+});
 
 let ctaImg = document.getElementById("cta-img");
 ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
